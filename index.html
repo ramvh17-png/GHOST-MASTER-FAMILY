@@ -1,143 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GHOST MASTER RP</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>GHOST MASTER Family</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- LOGIN SCREEN -->
-<div id="login-screen">
-  <h1>👻 GHOST MASTER RP 👻</h1>
-  <form id="login-form">
-    <input type="text" id="gameName" placeholder="Game Name" required>
-    <input type="number" id="level" placeholder="Level" required>
-    <input type="number" id="rank" placeholder="Family Rank (1–9)" required>
-    <input type="password" id="password" placeholder="Password" required>
-    <button type="submit">Enter Family</button>
-  </form>
-  <p id="login-error" style="color:red; display:none;">Wrong rank or password!</p>
+<!-- LOGIN -->
+<div class="box" id="login">
+  <h1>👻 GHOST MASTER</h1>
+
+  <input type="text" placeholder="Game Name">
+  <input type="text" placeholder="Level">
+  <input type="text" placeholder="Family Rank">
+  <input type="password" placeholder="Password">
+
+  <button class="btn green" onclick="login()">LOGIN</button>
 </div>
 
-<!-- MAIN CONTENT -->
-<div id="main-content" style="display:none;">
-  <h1>👻 GHOST MASTER RP 👻</h1>
+<!-- LOADING -->
+<div class="box hidden" id="loading">
+  <h2 class="loading-text">Loading Access...</h2>
+  <div class="loader"></div>
+</div>
 
-  <!-- Section Buttons -->
-  <div class="buttons">
-    <button class="neon-btn" data-section="rules" style="--neon:#39ff14">📜 Rules</button>
-    <button class="neon-btn" data-section="members" style="--neon:#ff39c7">👥 Members</button>
-    <button class="neon-btn" data-section="ranks" style="--neon:#39d6ff">🏆 Ranks</button>
-    <button class="neon-btn" data-section="war" style="--neon:#ffb739">⚔️ War Attended</button>
-    <button class="neon-btn" data-section="blacklist" style="--neon:#b839ff">🚫 Blacklist</button>
-  </div>
+<!-- MENU -->
+<div class="box hidden" id="menu">
+  <h2>Family Panel</h2>
 
-  <!-- SECTIONS -->
+  <button class="btn cyan" onclick="openPage('rules')">Family Rules</button>
+  <button class="btn pink" onclick="openPage('members')">Members</button>
+  <button class="btn purple" onclick="openPage('ranks')">Ranks</button>
+  <button class="btn yellow" onclick="openPage('blacklist')">Blacklist</button>
+</div>
 
-  <!-- Rules -->
-  <div id="rules" class="section">
-    <h2>📜 Ghost Master Family Rules – Grand Mobile RP</h2>
-    <ol>
-      <li><strong>Respect All Members:</strong> Treat everyone with respect, regardless of rank, role, or affiliation. No racism, hate speech, bullying, or harassment.</li>
-      <li><strong>Follow Chain of Command:</strong> Listen to higher ranks. Rank 10 (The Apex) and Rank 9 (Sovereigns) lead the family — their word is final.</li>
-      <li><strong>No Toxicity or Drama:</strong> Keep the environment friendly. Settle disputes privately or report them in #report-members.</li>
-      <li><strong>Promotions Must Be Earned:</strong> Complete required tasks and submit proof in #promotion-requests. Don't spam or beg.</li>
-      <li><strong>Help Your Family:</strong> Support members in-game if they’re attacked, harassed, or in need. Use #harassment-help to report such incidents.</li>
-      <li><strong>No Leaking Information:</strong> Do not leak family plans, screenshots, or chats to outsiders. This will result in a ban.</li>
-      <li><strong>Use English or Hindi Only:</strong> Stick to these languages for clear communication.</li>
-      <li><strong>No Advertising or Self-Promotion:</strong> Promoting other servers or content without permission is not allowed.</li>
-      <li><strong>Use Channels Correctly:</strong> Each channel has a purpose — follow it. Misuse can lead to warnings or mutes.</li>
-      <li><strong>Respect Server & Game Rules:</strong> Any violation of Grand Mobile RP rules will not be tolerated here either.</li>
-    </ol>
-    <p><strong>Breaking rules = warning or ban.<br>Loyalty and discipline are what make Elite Criminals strong.</strong></p>
-  </div>
+<!-- RULES -->
+<div class="box hidden" id="rules">
+  <h2>📜 Family Rules</h2>
+  <p>Rules yahan likho.</p>
+  <button class="btn back" onclick="back()">⬅ Back</button>
+</div>
 
-  <!-- Members -->
-  <div id="members" class="section">
-    <h2>👥 Members List</h2>
-    <table>
-      <tr><th>Name</th><th>Rank</th><th>Work</th></tr>
-      <tr><td>Ghost Lord</td><td>Leader</td><td>Control</td></tr>
-      <tr><td>Shadow</td><td>Underboss</td><td>War</td></tr>
-      <tr><td>Phantom</td><td>Captain</td><td>Mission</td></tr>
-    </table>
-  </div>
+<!-- MEMBERS -->
+<div class="box hidden" id="members">
+  <h2>👥 Members</h2>
+  <p>Name | Rank</p>
+  <button class="btn back" onclick="back()">⬅ Back</button>
+</div>
 
-  <!-- Ranks -->
-  <div id="ranks" class="section">
-    <h2>🏆 Ghost Master Family Ranks – Work Wise</h2>
-    <ol>
-      <li>New Member</li>
-      <li>Senior Medical</li>
-      <li>Agent</li>
-      <li>Don</li>
-      <li>Killer</li>
-      <li>Warrior</li>
-      <li>Alpha Don</li>
-      <li>Shot Caller</li>
-      <li>Deputy Leader</li>
-    </ol>
-  </div>
+<!-- RANKS -->
+<div class="box hidden" id="ranks">
+  <h2>🎖 Ranks</h2>
+  <p>
+    1. New Member<br>
+    2. Senior Medical<br>
+    3. Agent<br>
+    4. Don<br>
+    5. Killer<br>
+    6. Warrior<br>
+    7. Alpha Don<br>
+    8. Shot Caller<br>
+    9. Deputy Leader
+  </p>
+  <button class="btn back" onclick="back()">⬅ Back</button>
+</div>
 
-  <!-- War -->
-  <div id="war" class="section">
-    <h2>⚔️ War Attended</h2>
-    <ul>
-      <li>Ghost Lord – 15 Wars</li>
-      <li>Shadow – 10 Wars</li>
-      <li>Phantom – 7 Wars</li>
-    </ul>
-  </div>
-
-  <!-- Blacklist -->
-  <div id="blacklist" class="section">
-    <h2>🚫 Blacklist</h2>
-    <ul>
-      <li>PlayerX – Cheat</li>
-      <li>PlayerY – Misbehavior</li>
-    </ul>
-  </div>
-
+<!-- BLACKLIST -->
+<div class="box hidden" id="blacklist">
+  <h2>⛔ Blacklist</h2>
+  <p>Abhi koi nahi hai.</p>
+  <button class="btn back" onclick="back()">⬅ Back</button>
 </div>
 
 <script>
-// Rank-based password system
-document.getElementById('login-form').addEventListener('submit', function(e){
-  e.preventDefault();
+function login(){
+  // login hide
+  document.getElementById("login").classList.add("hidden");
 
-  const rank = parseInt(document.getElementById('rank').value);
-  const password = document.getElementById('password').value;
+  // loading show
+  document.getElementById("loading").classList.remove("hidden");
 
-  let allowed = false;
+  // delay
+  setTimeout(() => {
+    document.getElementById("loading").classList.add("hidden");
+    document.getElementById("menu").classList.remove("hidden");
+  }, 2000);
+}
 
-  if(rank >=1 && rank <=6 && password === "ghostmaster") allowed = true;
-  if(rank >=7 && rank <=9 && password === "ghostmastervip") allowed = true;
+function openPage(id){
+  hideAll();
+  document.getElementById(id).classList.remove("hidden");
+}
 
-  if(allowed){
-    document.getElementById('login-screen').style.display = 'none';
-    document.getElementById('main-content').style.display = 'block';
-  } else {
-    document.getElementById('login-error').style.display = 'block';
-  }
-});
+function back(){
+  hideAll();
+  document.getElementById("menu").classList.remove("hidden");
+}
 
-// Section toggle + button highlight
-const buttons = document.querySelectorAll('.neon-btn');
-
-buttons.forEach(btn=>{
-  btn.addEventListener('click', function(){
-    // Section toggle
-    const section = btn.getAttribute('data-section');
-    document.querySelectorAll('.section').forEach(s => s.style.display='none');
-    document.getElementById(section).style.display='block';
-    
-    // Button highlight & enlarge
-    buttons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  });
-});
+function hideAll(){
+  document.querySelectorAll(".box").forEach(b => b.classList.add("hidden"));
+}
 </script>
 
 </body>
