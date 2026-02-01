@@ -27,11 +27,11 @@
 
   <!-- Section Buttons -->
   <div class="buttons">
-    <button onclick="showSection('rules')">📜 Rules</button>
-    <button onclick="showSection('members')">👥 Members</button>
-    <button onclick="showSection('ranks')">🏆 Ranks</button>
-    <button onclick="showSection('war')">⚔️ War Attended</button>
-    <button onclick="showSection('blacklist')">🚫 Blacklist</button>
+    <button class="neon-btn" data-section="rules" style="--neon:#39ff14">📜 Rules</button>
+    <button class="neon-btn" data-section="members" style="--neon:#ff39c7">👥 Members</button>
+    <button class="neon-btn" data-section="ranks" style="--neon:#39d6ff">🏆 Ranks</button>
+    <button class="neon-btn" data-section="war" style="--neon:#ffb739">⚔️ War Attended</button>
+    <button class="neon-btn" data-section="blacklist" style="--neon:#b839ff">🚫 Blacklist</button>
   </div>
 
   <!-- SECTIONS -->
@@ -123,12 +123,21 @@ document.getElementById('login-form').addEventListener('submit', function(e){
   }
 });
 
-// Section toggle function
-function showSection(section){
-  const sections = document.querySelectorAll('.section');
-  sections.forEach(s => s.style.display = 'none');
-  document.getElementById(section).style.display = 'block';
-}
+// Section toggle + button highlight
+const buttons = document.querySelectorAll('.neon-btn');
+
+buttons.forEach(btn=>{
+  btn.addEventListener('click', function(){
+    // Section toggle
+    const section = btn.getAttribute('data-section');
+    document.querySelectorAll('.section').forEach(s => s.style.display='none');
+    document.getElementById(section).style.display='block';
+    
+    // Button highlight & enlarge
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
 </script>
 
 </body>
