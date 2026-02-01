@@ -1,56 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>GHOST MASTER | Family Panel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>GHOST MASTER Family</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- LOGIN -->
-<section id="login" class="center-box">
+<div id="loginBox">
   <h1>GHOST MASTER</h1>
-  <p class="subtitle">Grand Mobile RP Family Panel</p>
 
-  <input id="loginName" type="text" placeholder="Member Name">
-  <input id="loginPass" type="password" placeholder="Password">
+  <input id="name" placeholder="Member Name">
+  <input id="password" type="password" placeholder="Password">
 
-  <button onclick="login()">Enter Family</button>
-  <p id="loginError" class="error"></p>
-</section>
+  <button onclick="login()">LOGIN</button>
+  <p id="error"></p>
+</div>
 
-<!-- LOADING -->
-<section id="loading" class="hidden center-box">
-  <div class="spinner"></div>
-  <p>Verifying access…</p>
-</section>
+<div id="panel" class="hide">
+  <h2 id="welcome"></h2>
 
-<!-- DASHBOARD -->
-<section id="dashboard" class="hidden">
-  <header>
-    <div>
-      <h2 id="userInfo"></h2>
-    </div>
-    <button class="logout" onclick="logout()">Logout</button>
-  </header>
-
-  <nav class="menu">
-    <button onclick="openPage('rules')">Family Rules</button>
-    <button onclick="openPage('members')">Members</button>
+  <div class="buttons">
+    <button onclick="openPage('rules')">Rules</button>
     <button onclick="openPage('ranks')">Ranks</button>
-    <button onclick="openPage('blacklist')">Blacklist</button>
-    <button id="vipBtn" class="vip hidden" onclick="openPage('senior')">
-      Senior Staff
-    </button>
-  </nav>
-</section>
+    <button onclick="openPage('members')">Members</button>
+    <button id="seniorBtn" onclick="openPage('senior')" class="hide">Senior Staff</button>
+  </div>
 
-<!-- CONTENT PAGE -->
-<section id="page" class="hidden">
-  <button class="back" onclick="goBack()">← Back</button>
-  <div id="pageContent"></div>
-</section>
+  <div id="content"></div>
+</div>
 
 <script src="script.js"></script>
 </body>
