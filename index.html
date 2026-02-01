@@ -2,32 +2,40 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>GHOST MASTER Family</title>
+<title>GHOST MASTER | Login</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div id="loginBox">
-  <h1>GHOST MASTER</h1>
-
-  <input id="name" placeholder="Member Name">
-  <input id="password" type="password" placeholder="Password">
-
-  <button onclick="login()">LOGIN</button>
-  <p id="error"></p>
+  <h1 class="title">GHOST MASTER</h1>
+  <div class="input-group">
+    <label>Member Name</label>
+    <input type="text" id="loginName" placeholder="Enter your name">
+  </div>
+  <div class="input-group">
+    <label>Level</label>
+    <input type="text" id="loginLevel" placeholder="Auto" readonly>
+  </div>
+  <div class="input-group">
+    <label>Rank in Family</label>
+    <input type="text" id="loginRank" placeholder="Auto" readonly>
+  </div>
+  <div class="input-group">
+    <label>Contribution</label>
+    <input type="text" id="loginContribution" placeholder="Auto" readonly>
+  </div>
+  <div class="input-group">
+    <label>Password</label>
+    <input type="password" id="loginPass" placeholder="Enter password">
+  </div>
+  <button class="neonBtn" onclick="login()">LOGIN</button>
+  <p id="loginError" class="error"></p>
 </div>
 
-<div id="panel" class="hide">
-  <h2 id="welcome"></h2>
-
-  <div class="buttons">
-    <button onclick="openPage('rules')">Rules</button>
-    <button onclick="openPage('ranks')">Ranks</button>
-    <button onclick="openPage('members')">Members</button>
-    <button id="seniorBtn" onclick="openPage('senior')" class="hide">Senior Staff</button>
-  </div>
-
-  <div id="content"></div>
+<div id="dashboard" class="hidden">
+  <h2>Welcome <span id="userInfo"></span></h2>
+  <button class="logoutBtn" onclick="logout()">Logout</button>
 </div>
 
 <script src="script.js"></script>
