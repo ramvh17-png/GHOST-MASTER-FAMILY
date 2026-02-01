@@ -1,129 +1,49 @@
-*{box-sizing:border-box;font-family:Segoe UI,Arial,sans-serif}
-
 body{
-  margin:0;
-  background:#0b0f14;
-  color:#eaeaea;
-}
-
-h1,h2{margin:0}
-.hidden{display:none}
-
-.center-box{
-  max-width:360px;
-  margin:80px auto;
-  padding:30px;
-  background:#121826;
-  border-radius:12px;
+  background:#050505;
+  color:white;
+  font-family:Arial;
   text-align:center;
-  box-shadow:0 0 30px rgba(0,255,200,.15);
 }
-
-.subtitle{opacity:.7;margin-bottom:20px}
 
 input{
-  width:100%;
-  padding:12px;
-  margin:8px 0;
-  border-radius:8px;
-  border:1px solid #2a2f3a;
-  background:#0e1420;
-  color:#fff;
+  display:block;
+  margin:10px auto;
+  padding:10px;
+  width:220px;
+  border:2px solid cyan;
+  background:black;
+  color:white;
 }
 
 button{
-  width:100%;
-  padding:12px;
-  margin-top:12px;
-  border:none;
-  border-radius:8px;
-  background:#00e0b8;
-  color:#000;
-  font-weight:600;
+  background:black;
+  border:2px solid #ff00ff;
+  color:#ff00ff;
+  padding:10px 25px;
+  margin:10px;
   cursor:pointer;
-  transition:.25s;
+  transition:0.3s;
 }
 
 button:hover{
-  background:#00ffcf;
-  transform:translateY(-1px);
+  transform:scale(1.1);
+  background:#ff00ff;
+  color:black;
 }
 
-.error{color:#ff5c5c;margin-top:10px}
+.hide{display:none}
 
-/* loading */
-.spinner{
-  width:42px;height:42px;
-  border:4px solid #233;
-  border-top:4px solid #00ffcf;
-  border-radius:50%;
-  animation:spin 1s linear infinite;
-  margin:0 auto 15px;
-}
-@keyframes spin{to{transform:rotate(360deg)}}
-
-/* dashboard */
-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 20px;
-  background:#121826;
-  border-bottom:1px solid #1f2533;
-}
-
-.logout{
-  width:auto;
-  background:#ff5c5c;
-  color:#000;
-}
-
-.menu{
+#loginBox{
+  margin-top:120px;
+  border:2px solid cyan;
+  width:300px;
   padding:20px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
-.menu button{
-  background:#1a2236;
-  color:#eaeaea;
-}
-
-.menu button:hover{
-  background:#2a3554;
-}
-
-.vip{
-  grid-column:span 2;
-  background:#ffd166 !important;
-  color:#000 !important;
-}
-
-/* page */
-#page{
-  padding:20px;
-}
-
-.back{
-  width:auto;
-  margin-bottom:15px;
-  background:#1a2236;
-  color:#fff;
-}
-
-table{
-  width:100%;
-  border-collapse:collapse;
-  margin-top:15px;
-}
-
-th,td{
-  border:1px solid #2a2f3a;
-  padding:8px;
-  text-align:left;
-}
-
-th{
-  background:#1a2236;
+#content{
+  margin-top:20px;
+  padding:15px;
+  border:2px solid lime;
 }
