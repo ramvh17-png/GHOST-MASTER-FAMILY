@@ -1,62 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>GHOST MASTER Family</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>GHOST MASTER Family</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- LOGIN -->
-<div class="box" id="login">
-  <h1 class="title">👻 GHOST MASTER</h1>
+<div class="card active" id="login">
+  <h1>👻 GHOST MASTER</h1>
 
-  <input type="text" placeholder="Game Name">
-  <input type="text" placeholder="Level">
-  <input type="text" placeholder="Family Rank">
-  <input type="password" id="password" placeholder="Password">
+  <input placeholder="Game Name">
+  <input placeholder="Level">
+  <input placeholder="Family Rank">
+  <input id="pass" type="password" placeholder="Password">
 
-  <button class="btn neon-green" onclick="login()">LOGIN</button>
+  <button class="btn green" onclick="login()">LOGIN</button>
 </div>
 
-<!-- LOADING -->
-<div class="box hidden" id="loading">
-  <h2 class="neon-green-text">Loading Access...</h2>
-  <div class="loader"></div>
+<div class="card" id="loading">
+  <h2 class="green-text">Access Loading...</h2>
+  <div class="spinner"></div>
 </div>
 
-<!-- MENU -->
-<div class="box hidden" id="menu">
-  <h2 class="title">Family Panel</h2>
+<div class="card" id="menu">
+  <h2>Family Panel</h2>
 
-  <button class="btn neon-cyan" onclick="openPage('rules')">📜 Family Rules</button>
-  <button class="btn neon-pink" onclick="openPage('members')">👥 Members</button>
-  <button class="btn neon-purple" onclick="openPage('ranks')">🎖 Ranks</button>
-  <button class="btn neon-yellow" onclick="openPage('blacklist')">⛔ Blacklist</button>
-
-  <!-- VIP ONLY -->
-  <button class="btn neon-red hidden" id="seniorBtn" onclick="openPage('senior')">
-    👑 Senior Staff
-  </button>
+  <button class="btn cyan" onclick="open('rules')">📜 Family Rules</button>
+  <button class="btn blue" onclick="open('members')">👥 Members</button>
+  <button class="btn purple" onclick="open('ranks')">🎖 Ranks</button>
+  <button class="btn red" onclick="open('blacklist')">⛔ Blacklist</button>
+  <button class="btn gold" id="vipBtn" onclick="open('senior')">👑 Senior Staff</button>
 </div>
 
-<!-- RULES -->
-<div class="box hidden" id="rules">
-  <h2>📜 Family Rules</h2>
-  <p>Rules yahan likho.</p>
+<div class="card" id="rules">
+  <h2>Family Rules</h2>
+  <p>Add rules here</p>
   <button class="btn back" onclick="back()">⬅ Back</button>
 </div>
 
-<!-- MEMBERS -->
-<div class="box hidden" id="members">
-  <h2>👥 Members</h2>
+<div class="card" id="members">
+  <h2>Members</h2>
   <p>Name | Rank</p>
   <button class="btn back" onclick="back()">⬅ Back</button>
 </div>
 
-<!-- RANKS -->
-<div class="box hidden" id="ranks">
-  <h2>🎖 Ranks</h2>
+<div class="card" id="ranks">
+  <h2>Ranks</h2>
   <p>
     1. New Member<br>
     2. Senior Medical<br>
@@ -71,55 +61,43 @@
   <button class="btn back" onclick="back()">⬅ Back</button>
 </div>
 
-<!-- BLACKLIST -->
-<div class="box hidden" id="blacklist">
-  <h2>⛔ Blacklist</h2>
-  <p>Abhi koi nahi hai.</p>
+<div class="card" id="blacklist">
+  <h2>Blacklist</h2>
+  <p>No one blacklisted</p>
   <button class="btn back" onclick="back()">⬅ Back</button>
 </div>
 
-<!-- SENIOR STAFF (VIP) -->
-<div class="box hidden" id="senior">
-  <h2>👑 Senior Staff Rules</h2>
-  <p>Yahan baad me rules add karna.</p>
+<div class="card" id="senior">
+  <h2>Senior Staff Channel</h2>
+  <p>VIP rules here</p>
   <button class="btn back" onclick="back()">⬅ Back</button>
 </div>
 
 <script>
-function login(){
-  const pass = document.getElementById("password").value;
+let vip=false;
 
-  if(pass !== "ghostmaster" && pass !== "ghostmastervip"){
-    alert("Wrong Password");
+function show(id){
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function login(){
+  const p=document.getElementById("pass").value;
+  if(p!=="ghostmaster" && p!=="ghostmastervip"){
+    alert("Wrong password");
     return;
   }
+  vip = p==="ghostmastervip";
+  show("loading");
 
-  document.getElementById("login").classList.add("hidden");
-  document.getElementById("loading").classList.remove("hidden");
-
-  setTimeout(() => {
-    document.getElementById("loading").classList.add("hidden");
-    document.getElementById("menu").classList.remove("hidden");
-
-    if(pass === "ghostmastervip"){
-      document.getElementById("seniorBtn").classList.remove("hidden");
-    }
-  }, 2000);
+  setTimeout(()=>{
+    show("menu");
+    document.getElementById("vipBtn").style.display = vip ? "block":"none";
+  },1500);
 }
 
-function openPage(id){
-  hideAll();
-  document.getElementById(id).classList.remove("hidden");
-}
-
-function back(){
-  hideAll();
-  document.getElementById("menu").classList.remove("hidden");
-}
-
-function hideAll(){
-  document.querySelectorAll(".box").forEach(b => b.classList.add("hidden"));
-}
+function open(id){ show(id); }
+function back(){ show("menu"); }
 </script>
 
 </body>
