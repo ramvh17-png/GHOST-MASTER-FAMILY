@@ -2,44 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>GHOST MASTER | Login</title>
+  <title>Ghost Master Family Panel</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="login-wrapper">
-  <div class="login-box">
-    <h1 class="family-name">GHOST MASTER</h1>
-    <p class="subtitle">Grand Mobile RP Family Panel</p>
+<!-- LOGIN PAGE -->
+<div id="loginBox" class="box">
+  <h1>👑 Ghost Master Family</h1>
 
-    <div class="field">
-      <label>Name</label>
-      <input type="text" placeholder="Enter member name">
-    </div>
+  <input type="text" id="name" placeholder="Member Name">
+  <input type="number" id="rank" placeholder="Family Rank (1–10)">
+  <input type="number" id="level" placeholder="Game Level">
+  <input type="password" id="password" placeholder="Password">
 
-    <div class="field">
-      <label>Level</label>
-      <input type="text" placeholder="Auto" disabled>
-    </div>
-
-    <div class="field">
-      <label>Rank in Family</label>
-      <input type="text" placeholder="Auto" disabled>
-    </div>
-
-    <div class="field">
-      <label>Contribution</label>
-      <input type="text" placeholder="Auto" disabled>
-    </div>
-
-    <div class="field">
-      <label>Password</label>
-      <input type="password" placeholder="Enter password">
-    </div>
-
-    <button class="login-btn">LOGIN</button>
-  </div>
+  <button onclick="login()">Login</button>
+  <p id="error"></p>
 </div>
 
+<!-- DASHBOARD -->
+<div id="dashboard" class="box hidden">
+  <h2>Welcome to Family Panel</h2>
+
+  <a href="rules.html" class="btn">📜 Family Rules</a>
+  <a href="ranks.html" class="btn">🏆 Family Ranks</a>
+  <a href="members.html" class="btn">👥 Members</a>
+  <a href="staff.html" class="btn vip">🧑‍💼 Staff (R7–R9)</a>
+
+  <button class="logout" onclick="logout()">Logout</button>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
