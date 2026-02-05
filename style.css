@@ -1,101 +1,84 @@
-*{
-  box-sizing:border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1220;
+  color: white;
 }
 
-body{
-  margin:0;
-  height:100vh;
-  background:linear-gradient(135deg,#020202,#0b1220);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:white;
+.box {
+  max-width: 380px;
+  margin: 80px auto;
+  padding: 25px;
+  background: #020617;
+  border-radius: 12px;
+  text-align: center;
 }
 
-/* wrapper */
-.login-wrapper{
-  width:100%;
-  display:flex;
-  justify-content:center;
+h1, h2 {
+  color: #22c55e;
 }
 
-/* box */
-.login-box{
-  width:360px;
-  background:#0b0f1a;
-  padding:28px;
-  border-radius:14px;
-  border:2px solid #00fff7;
-  box-shadow:0 0 25px rgba(0,255,247,0.4);
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: none;
 }
 
-/* title */
-.family-name{
-  margin:0;
-  text-align:center;
-  font-size:30px;
-  letter-spacing:2px;
-  color:#00fff7;
-  text-shadow:0 0 12px #00fff7;
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #22c55e;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.subtitle{
-  text-align:center;
-  font-size:13px;
-  margin-bottom:22px;
-  color:#9aa4ff;
+button:hover {
+  background: #16a34a;
 }
 
-/* fields */
-.field{
-  margin-bottom:14px;
+.btn {
+  display: block;
+  margin: 10px 0;
+  padding: 12px;
+  text-decoration: none;
+  background: #1e293b;
+  color: white;
+  border-radius: 8px;
 }
 
-.field label{
-  display:block;
-  font-size:12px;
-  margin-bottom:4px;
-  color:#cfd6ff;
+.btn:hover {
+  background: #22c55e;
+  color: black;
 }
 
-.field input{
-  width:100%;
-  padding:10px;
-  border-radius:8px;
-  border:1.8px solid #1c2540;
-  background:#050814;
-  color:white;
-  outline:none;
+.vip {
+  background: #312e81;
 }
 
-.field input:focus{
-  border-color:#00fff7;
-  box-shadow:0 0 8px rgba(0,255,247,0.6);
+.vip:hover {
+  background: #a855f7;
+  color: black;
 }
 
-/* disabled auto fields */
-.field input:disabled{
-  color:#00ff88;
-  border-color:#00ff88;
+.logout {
+  background: #dc2626;
+  margin-top: 20px;
 }
 
-/* login button */
-.login-btn{
-  width:100%;
-  margin-top:10px;
-  padding:12px;
-  border:none;
-  border-radius:10px;
-  background:linear-gradient(90deg,#00fff7,#00b7ff);
-  color:#000;
-  font-size:16px;
-  font-weight:600;
-  cursor:pointer;
-  transition:0.3s;
+.logout:hover {
+  background: #b91c1c;
 }
 
-.login-btn:hover{
-  transform:scale(1.04);
-  box-shadow:0 0 20px rgba(0,255,247,0.9);
+.hidden {
+  display: none;
+}
+
+#error {
+  color: red;
+  margin-top: 10px;
 }
