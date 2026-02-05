@@ -1,82 +1,82 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #0b0f14;
+  background: radial-gradient(circle at top, #001a1a, #000);
   color: #fff;
+}
+
+.hidden { display: none; }
+
+.centerBox {
+  width: 340px;
+  margin: 100px auto;
+  padding: 25px;
+  background: rgba(0,0,0,0.7);
+  border: 2px solid #00ffcc;
+  border-radius: 15px;
+  box-shadow: 0 0 35px #00ffcc;
+}
+
+.centerBox h1 {
   text-align: center;
+  color: #00ffcc;
 }
 
-.page {
-  padding: 20px;
-}
-
-.hidden {
-  display: none;
-}
-
-h1 {
-  color: #00f7ff;
+label {
+  margin-top: 15px;
+  display: block;
+  font-size: 16px;
 }
 
 input {
-  width: 80%;
-  max-width: 300px;
-  padding: 12px;
-  margin: 10px 0;
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
   border-radius: 8px;
   border: none;
+  outline: none;
 }
 
 button {
-  padding: 12px 25px;
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 16px;
+  background: #00ffcc;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(90deg,#00f7ff,#8f00ff);
-  color: #000;
-  font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
+  box-shadow: 0 0 20px #00ffcc;
 }
 
 button:hover {
   transform: scale(1.05);
 }
 
-#loginError {
+#errorMsg {
+  text-align: center;
   color: red;
   margin-top: 10px;
 }
 
-/* Member cards */
-.memberCard {
-  background: #111820;
-  border-radius: 15px;
+/* DASHBOARD */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   padding: 15px;
-  margin: 15px auto;
-  max-width: 500px;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
-.memberCard:hover {
-  transform: scale(1.03);
+.menu button {
+  width: auto;
+  padding: 10px 16px;
 }
 
-.rank {
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 14px;
-}
-
-/* Profile */
-.profileCard {
-  background: #111820;
-  max-width: 400px;
-  margin: auto;
-  padding: 25px;
-  border-radius: 20px;
-}
-
-.profileCard span {
-  color: #00f7ff;
+.contentBox {
+  margin: 15px;
+  padding: 20px;
+  background: rgba(0,0,0,0.6);
+  border: 2px solid #00ffcc;
+  border-radius: 15px;
+  box-shadow: 0 0 25px #00ffcc;
 }
