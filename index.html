@@ -2,34 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ghost Master Family Panel</title>
+  <title>Ghost Master Family</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- LOGIN PAGE -->
-<div id="loginBox" class="box">
-  <h1>👑 Ghost Master Family</h1>
+<div id="loginPage" class="page">
+  <h1>Ghost Master Family Login</h1>
 
-  <input type="text" id="name" placeholder="Member Name">
-  <input type="number" id="rank" placeholder="Family Rank (1–10)">
-  <input type="number" id="level" placeholder="Game Level">
-  <input type="password" id="password" placeholder="Password">
+  <input type="text" id="loginName" placeholder="Name">
+  <input type="password" id="loginPassword" placeholder="Password">
 
   <button onclick="login()">Login</button>
-  <p id="error"></p>
+
+  <p id="loginError"></p>
 </div>
 
-<!-- DASHBOARD -->
-<div id="dashboard" class="box hidden">
-  <h2>Welcome to Family Panel</h2>
+<div id="membersPage" class="page hidden">
+  <h1>Family Members</h1>
+  <div id="membersList"></div>
+</div>
 
-  <a href="rules.html" class="btn">📜 Family Rules</a>
-  <a href="ranks.html" class="btn">🏆 Family Ranks</a>
-  <a href="members.html" class="btn">👥 Members</a>
-  <a href="staff.html" class="btn vip">🧑‍💼 Staff (R7–R9)</a>
+<div id="profilePage" class="page hidden">
+  <div class="profileCard">
+    <h2 id="pName"></h2>
+    <p><span>Rank :</span> <b id="pRank"></b></p>
+    <p><span>Level :</span> <b id="pLevel"></b></p>
+    <p><span>Contribution :</span> <b id="pContribution"></b></p>
 
-  <button class="logout" onclick="logout()">Logout</button>
+    <button onclick="backToMembers()">⬅ Back</button>
+  </div>
 </div>
 
 <script src="script.js"></script>
