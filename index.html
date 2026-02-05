@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>GHOST MASTER | Login</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>GHOST MASTER | Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="loginBox">
-  <h1 class="title">GHOST MASTER</h1>
-  <div class="input-group">
-    <label>Member Name</label>
-    <input type="text" id="loginName" placeholder="Enter your name">
+<div class="login-wrapper">
+  <div class="login-box">
+    <h1 class="family-name">GHOST MASTER</h1>
+    <p class="subtitle">Grand Mobile RP Family Panel</p>
+
+    <div class="field">
+      <label>Name</label>
+      <input type="text" placeholder="Enter member name">
+    </div>
+
+    <div class="field">
+      <label>Level</label>
+      <input type="text" placeholder="Auto" disabled>
+    </div>
+
+    <div class="field">
+      <label>Rank in Family</label>
+      <input type="text" placeholder="Auto" disabled>
+    </div>
+
+    <div class="field">
+      <label>Contribution</label>
+      <input type="text" placeholder="Auto" disabled>
+    </div>
+
+    <div class="field">
+      <label>Password</label>
+      <input type="password" placeholder="Enter password">
+    </div>
+
+    <button class="login-btn">LOGIN</button>
   </div>
-  <div class="input-group">
-    <label>Level</label>
-    <input type="text" id="loginLevel" placeholder="Auto" readonly>
-  </div>
-  <div class="input-group">
-    <label>Rank in Family</label>
-    <input type="text" id="loginRank" placeholder="Auto" readonly>
-  </div>
-  <div class="input-group">
-    <label>Contribution</label>
-    <input type="text" id="loginContribution" placeholder="Auto" readonly>
-  </div>
-  <div class="input-group">
-    <label>Password</label>
-    <input type="password" id="loginPass" placeholder="Enter password">
-  </div>
-  <button class="neonBtn" onclick="login()">LOGIN</button>
-  <p id="loginError" class="error"></p>
 </div>
 
-<div id="dashboard" class="hidden">
-  <h2>Welcome <span id="userInfo"></span></h2>
-  <button class="logoutBtn" onclick="logout()">Logout</button>
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
