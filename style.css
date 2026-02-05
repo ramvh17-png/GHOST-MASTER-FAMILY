@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0f14;
+  color: #fff;
+  text-align: center;
+}
+
+.page {
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+h1 {
+  color: #00f7ff;
+}
+
+input {
+  width: 80%;
+  max-width: 300px;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg,#00f7ff,#8f00ff);
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+#loginError {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Member cards */
+.memberCard {
+  background: #111820;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 15px auto;
+  max-width: 500px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.memberCard:hover {
+  transform: scale(1.03);
+}
+
+.rank {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* Profile */
+.profileCard {
+  background: #111820;
+  max-width: 400px;
+  margin: auto;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.profileCard span {
+  color: #00f7ff;
+}
