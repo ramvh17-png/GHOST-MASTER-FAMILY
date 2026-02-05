@@ -7,31 +7,31 @@
 </head>
 <body>
 
-<div id="loginPage" class="page">
-  <h1>Ghost Master Family Login</h1>
+<!-- LOGIN PAGE -->
+<div id="loginPage" class="centerBox">
+  <h1>Ghost Master Family</h1>
 
-  <input type="text" id="loginName" placeholder="Name">
-  <input type="password" id="loginPassword" placeholder="Password">
+  <label>Name</label>
+  <input type="text" id="loginName" placeholder="Robert">
+
+  <label>Password</label>
+  <input type="password" id="loginPass" placeholder="Password">
 
   <button onclick="login()">Login</button>
-
-  <p id="loginError"></p>
+  <p id="errorMsg"></p>
 </div>
 
-<div id="membersPage" class="page hidden">
-  <h1>Family Members</h1>
-  <div id="membersList"></div>
-</div>
+<!-- DASHBOARD -->
+<div id="dashboard" class="hidden">
 
-<div id="profilePage" class="page hidden">
-  <div class="profileCard">
-    <h2 id="pName"></h2>
-    <p><span>Rank :</span> <b id="pRank"></b></p>
-    <p><span>Level :</span> <b id="pLevel"></b></p>
-    <p><span>Contribution :</span> <b id="pContribution"></b></p>
+  <h2 id="welcome"></h2>
 
-    <button onclick="backToMembers()">⬅ Back</button>
-  </div>
+  <!-- MENU -->
+  <div id="menu" class="menu"></div>
+
+  <!-- CONTENT -->
+  <div id="content" class="contentBox"></div>
+
 </div>
 
 <script src="script.js"></script>
